@@ -1,2 +1,2 @@
-# Sntimental-Analysis
-Sntimental Analysis of Twitter
+# Sentimental-Analysis
+Sentimental Analysis of Twitter
