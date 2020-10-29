@@ -35,10 +35,10 @@ def tweet_classify(request):
     except:
         return JsonResponse({'msg': 'Unexpected Error Occurred','error':True,'tweet':str('')})
 
-consumer_key = 'xGuJiDDDBK7Mw4q4EMhvjddTD'
-consumer_secret = 'vteNANcfvJOPxamtR8DOuR99gS6xAIz9xFzj2kEcYo0K1oBcfR'
-access_key = '828219074677186560-nPYYLbEQPKUMVHAwlamukyuk1iQyvQy'
-access_secret = 'ppNyHlkOF9L5hHOUnzmzf1bXaBM8QyrQjsW8tAXa73Hcb'
+consumer_key = 'DUMMY'
+consumer_secret = 'DUMMY'
+access_key = 'DUMMY'
+access_secret = 'DUMMY'
 auth_params = {
     'app_key': consumer_key,
     'app_secret':consumer_secret,
