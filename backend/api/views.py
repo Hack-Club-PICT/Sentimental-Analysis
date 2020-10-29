@@ -35,15 +35,12 @@ def tweet_classify(request):
     except:
         return JsonResponse({'msg': 'Unexpected Error Occurred','error':True,'tweet':str('')})
 
-consumer_key = 'DUMMY'
-consumer_secret = 'DUMMY'
-access_key = 'DUMMY'
-access_secret = 'DUMMY'
+
 auth_params = {
-    'app_key': consumer_key,
-    'app_secret':consumer_secret,
-    'oauth_token':access_key,
-    'oauth_token_secret':access_secret
+    'app_key':  os.environ['CONSUMER_KEY'],
+    'app_secret':os.environ['CONSUMER_SECRET'],
+    'oauth_token':os.environ['ACCESS_KEY'],
+    'oauth_token_secret':os.environ['ACCESS_SECRET']
 }
 AUTH =  OAuth1 (
     auth_params['app_key'],
