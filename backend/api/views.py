@@ -9,8 +9,12 @@ import requests
 from requests_oauthlib import OAuth1
 import json
 
-def home(request):
+
+def index(request):
     return HttpResponse('Home')
+    # return render(request, "build/index.html")
+
+
 
 
 # Create your views here.
