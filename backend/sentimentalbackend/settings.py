@@ -61,10 +61,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'sentimentalbackend.urls'
 
+
+# CHANGE THE TEMPLATES AS WELL
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'*')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -131,8 +133,15 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+
+# CHANGE THIS TO DEPLOY THE STATIC COLLECT THE STATIC FILES
 STATIC_URL = '/static/'
+
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'poketimes', "build", "static")
+# ]
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+
 
 import django_heroku
 django_heroku.settings(locals())
