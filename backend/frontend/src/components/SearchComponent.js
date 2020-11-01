@@ -43,7 +43,7 @@ class SearchComponent extends Component {
         this.setState({keyword:''})
         this.setState({detailInfo2arr:[],
           detailInfo3arr:[]})
-        axios.post('http://127.0.0.1:8000/api/classify', this.state)
+        axios.post('https://gentle-gorge-50568.herokuapp.com/api/classify', this.state)
         .then(response => {
          const detailInfo = {
            error: response.data.error,
@@ -71,7 +71,7 @@ class SearchComponent extends Component {
           detailInfo: null
         })
         this.setState({detailInfo3arr:[]})
-        axios.post('http://127.0.0.1:8000/api/search/user', this.state)
+        axios.post('https://gentle-gorge-50568.herokuapp.com/api/search/user', this.state)
         .then(response => {
             this.setState({
               detailInfo2arr: response.data.data
@@ -95,8 +95,8 @@ class SearchComponent extends Component {
           detailInfo: null
         })
         this.setState({detailInfo2arr:[]})
-        // gentle-gorge-50568.herokuapp.com
-        axios.post('http://127.0.0.1:8000/api/search/keyword', this.state)
+        
+        axios.post('https://gentle-gorge-50568.herokuapp.com/api/search/keyword', this.state)
         .then(response => {
 
             this.setState({
