@@ -11,11 +11,7 @@ import json
 
 
 def index(request):
-    return HttpResponse('Home')
-    # return render(request, "build/index.html")
-
-
-
+    return render(request, "build/index.html")
 
 # Create your views here.
 @api_view(['POST'])
@@ -23,13 +19,10 @@ def tweet_classify(request):
     try:
         # LOAD A PICKLE
         loaded_model = pickle.load(open(os.path.join(os.getcwd(),'api','model.pkl'),'rb'))
-
-        tweet = Tweet(request.data.get('owner'),request.data.get('text'))
+        tweet = Tweet('',request.data.get('text'))
         res = text_preprocessing(tweet.text)
         # CLASSIFY THE TWEET USING ML MODEL
         result = loaded_model.predict([res])[0]
-        print("Results: {0}".format(result))
-
         if( result == 1 ):
             tweet.type = 'Positive Tweet' 
             return JsonResponse({'msg': 'Negative Tweet','error':False,'tweet':tweet.text})
@@ -59,7 +52,8 @@ def search_user_tweets(request):
     try:
         # LOAD A PICKLE
         loaded_model = pickle.load(open(os.path.join(os.getcwd(),'api','model.pkl'),'rb'))
-        username = request.data.get('user')
+        username = request.data.get('username')
+        print(username)
         searchQuery = {'screen_name':username,'count':10,'tweet_mode':'extended'}
         result = requests.get(BASE_TWITTER_URL + 'statuses/user_timeline.json',searchQuery,auth=AUTH)
         tw = result.json()
