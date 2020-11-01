@@ -1,0 +1,75 @@
+h1,
+p {
+    font-family: Lato;
+}
+
+.title {
+    font-family: 'Cookie', cursive;
+    font-size: 65px;
+    top: 0 auto;
+    line-height: 150%;
+    letter-spacing: 4px;
+    padding: 20px;
+    margin-top: 25px;
+    text-shadow: 2px 2px 4px #ffffff;
+}
+
+.tab {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-size: 16px;
+    padding: 15px 10px;
+    width: 160px;
+}
+
+.maintext {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.inputtext {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: black;
+    padding-left: 10px;
+}
+
+form {
+    /* This bit sets up the horizontal layout */
+    display: flex;
+    flex-direction: row;
+    /* This bit draws the box around it */
+    /* border:1px solid grey; */
+    /* I've used padding so you can see the edges of the elements. */
+    padding: 2px;
+    background-color: black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+form:hover {
+    box-shadow: 0 20px 8px 0 rgba(0, 0, 0, 0.5), 0 -7px 12px 0 #00d3e9;
+}
+
+input {
+    /* Tell the input to use all the available space */
+    flex-grow: 2;
+    /* And hide the input's outline, so the form looks like the outline */
+    border: none;
+    height: 48px;
+}
+
+button {
+    /* Just a little styling to make it pretty */
+    background-color: white;
+    color: black;
+}
+
+.line {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-grow: 2;
+    width: 100%;
+    border-top: 1px solid white;
+}
