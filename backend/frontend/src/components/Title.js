@@ -5,7 +5,7 @@ class Title extends Component {
     render() {
         return(
             <>
-            <div style={{ marginTop: "9.5rem"}}> </div>
+            <div style={{ marginTop: "4rem"}}> </div>
             <div className="title" >
           <center>
          Twitter Sentiment Analysis
